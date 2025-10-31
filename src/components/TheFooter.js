@@ -9,18 +9,17 @@ export default class TheFooter extends Component {
   }
   render() {
     const { github, repository } = aboutStore.state;
-    this.el.innerHTML = `
+    this.el.innerHTML = /* html */ `
       <div>
         <a href="${repository}">
-          GitHub Repository
-        </a> 
+          GitHub Repository.
+        </a>
       </div>
+      <div>
         <a href="${github}">
           ${new Date().getFullYear()}
-          t4330n
+          HEROPY
         </a>
-      <div>
-     
       </div>
     `;
   }

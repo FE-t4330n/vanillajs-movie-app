@@ -7,14 +7,13 @@ export default class MovieItem extends Component {
       tagName: "a",
     });
   }
-
   render() {
     const { movie } = this.props;
 
     this.el.setAttribute("href", `#/movie?id=${movie.imdbID}`);
     this.el.classList.add("movie");
     this.el.style.backgroundImage = `url(${movie.Poster})`;
-    this.el.innerHTML = `
+    this.el.innerHTML = /* html */ `
       <div class="info">
         <div class="year">
           ${movie.Year}

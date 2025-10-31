@@ -1,6 +1,7 @@
+/* Common */
 html {
   --color-black: #0e111b;
-  --color-white: #ffffff;
+  --color-white: #fff;
   --color-white-50: rgba(255, 255, 255, 0.5);
   --color-white-30: rgba(255, 255, 255, 0.3);
   --color-white-20: rgba(255, 255, 255, 0.2);
@@ -17,6 +18,7 @@ body {
   color: var(--color-white);
 }
 
+/* Container */
 .container {
   max-width: 1120px;
   margin: 0 auto;
@@ -32,6 +34,8 @@ body {
     padding: 40px 20px;
   }
 }
+
+/* Button */
 .btn {
   height: 50px;
   padding: 0 20px;
@@ -57,6 +61,7 @@ body {
   color: var(--color-white);
 }
 
+/* Default Loading Animation */
 .the-loader {
   width: 30px;
   height: 30px;
@@ -78,6 +83,7 @@ body {
   }
 }
 
+/* Skeleton Loading Animation */
 .skeleton {
   position: relative;
   overflow: hidden;
@@ -109,6 +115,7 @@ body {
   }
 }
 
+/* components/TheHeader */
 header {
   padding: 20px 40px;
   background-color: rgba(14, 17, 27, 0.9);
@@ -172,6 +179,7 @@ header .user img {
   }
 }
 
+/* components/TheFooter */
 footer {
   padding: 40px 40px 60px;
   text-align: center;
@@ -184,6 +192,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* components/Headline */
 .headline {
   margin-bottom: 40px;
 }
@@ -205,6 +214,7 @@ footer a:hover {
   }
 }
 
+/* components/Search */
 .search {
   display: flex;
   gap: 10px;
@@ -229,6 +239,7 @@ footer a:hover {
   max-width: 150px;
 }
 
+/* components/MovieList */
 .movie-list {
   padding: 20px;
   border-radius: 4px;
@@ -246,6 +257,7 @@ footer a:hover {
   gap: 20px;
 }
 
+/* components/MovieItem */
 .movies .movie {
   --width: 200px;
   width: var(--width);
@@ -266,10 +278,8 @@ footer a:hover {
   border: 6px solid var(--color-primary);
 }
 .movies .movie .info {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 20%; */
+  background-color: rgba(14, 17, 27, 0.3);
+  backdrop-filter: blur(10px);
   width: 100%;
   padding: 14px;
   box-sizing: border-box;
@@ -278,8 +288,6 @@ footer a:hover {
   position: absolute;
   left: 0;
   bottom: 0;
-  background-color: rgba(14, 17, 27, 0.3);
-  backdrop-filter: blur(10px);
 }
 .movies .movie .info .year {
   color: var(--color-primary);
@@ -288,6 +296,7 @@ footer a:hover {
   color: var(--color-white);
 }
 
+/* components/MovieListMore */
 .view-more {
   width: 100%;
   max-width: 300px;
@@ -298,6 +307,7 @@ footer a:hover {
   display: none;
 }
 
+/* routes/Movie */
 .the-movie {
   color: var(--color-white-50);
   display: flex;
@@ -316,8 +326,8 @@ footer a:hover {
   flex-grow: 1;
 }
 .the-movie .title {
-  font-size: 70px;
   font-family: "Oswald", sans-serif;
+  font-size: 70px;
   line-height: 1;
   color: var(--color-white);
   margin-bottom: 30px;
@@ -329,7 +339,7 @@ footer a:hover {
   color: var(--color-primary);
   margin-bottom: 20px;
 }
-.the-movie .labels {
+.the-movie .labels.skeleton {
   height: 30px;
 }
 .the-movie .plot.skeleton {
@@ -337,8 +347,8 @@ footer a:hover {
   height: 400px;
 }
 .the-movie h3 {
-  font-size: 20px;
   font-family: "Oswald", sans-serif;
+  font-size: 20px;
   color: var(--color-white);
   margin: 24px 0 6px;
 }
@@ -360,6 +370,7 @@ footer a:hover {
   }
 }
 
+/* routes/About */
 .about .photo {
   width: 230px;
   height: 230px;
@@ -368,8 +379,8 @@ footer a:hover {
   background-size: cover;
 }
 .about .name {
-  font-size: 40px;
   font-family: "Oswald", sans-serif;
+  font-size: 40px;
   margin-bottom: 20px;
 }
 .about p {
@@ -385,6 +396,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* routes/NotFound */
 .not-found h1 {
   font-size: 70px;
   font-weight: 700;

@@ -1,30 +1,22 @@
 import { Component } from "../core/heropy";
-import movieStore from "../store/movie";
 import MovieItem from "./MovieItem";
+import movieStore from "../store/movie";
 
 export default class MovieList extends Component {
   constructor() {
     super();
-    movieStore.subscribe("movies", () => {
-      this.render();
-    });
-    movieStore.subscribe("loading", () => {
-      this.render();
-    });
-    movieStore.subscribe("message", () => {
-      this.render();
-    });
+    movieStore.subscribe("movies", () => this.render());
+    movieStore.subscribe("message", () => this.render());
+    movieStore.subscribe("loading", () => this.render());
   }
-
   render() {
     this.el.classList.add("movie-list");
-    this.el.innerHTML = `
-    ${
-      movieStore.state.message
-        ? `<div class="message">${movieStore.state.message}</div>`
-        : '<div class="movies"></div>'
-    }
-      
+    this.el.innerHTML = /* html */ `
+      ${
+        movieStore.state.message
+          ? `<div class="message">${movieStore.state.message}</div>`
+          : '<div class="movies"></div>'
+      }
       <div class="the-loader hide"></div>
     `;
 
@@ -33,14 +25,14 @@ export default class MovieList extends Component {
       ...movieStore.state.movies.map(
         (movie) =>
           new MovieItem({
-            movie: movie,
+            movie,
           }).el
       )
     );
 
-    const loadEl = this.el.querySelector(".the-loader");
+    const loaderEl = this.el.querySelector(".the-loader");
     movieStore.state.loading
-      ? loadEl.classList.remove("hide")
-      : loadEl.classList.add("hide");
+      ? loaderEl.classList.remove("hide")
+      : loaderEl.classList.add("hide");
   }
 }

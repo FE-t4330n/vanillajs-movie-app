@@ -6,7 +6,10 @@ export default class TheHeader extends Component {
       tagName: "header",
       state: {
         menus: [
-          { name: "Search", href: "#/" },
+          {
+            name: "Search",
+            href: "#/",
+          },
           {
             name: "Movie",
             href: "#/movie?id=tt4520988",
@@ -23,9 +26,9 @@ export default class TheHeader extends Component {
     });
   }
   render() {
-    this.el.innerHTML = `
-      <a 
-        href="#/" 
+    this.el.innerHTML = /* html */ `
+      <a
+        href="#/"
         class="logo">
         <span>OMDbAPI</span>.COM
       </a>
@@ -36,14 +39,14 @@ export default class TheHeader extends Component {
               const href = menu.href.split("?")[0];
               const hash = location.hash.split("?")[0];
               const isActive = href === hash;
-              return `
-              <li> 
-                <a 
+              return /* html */ `
+              <li>
+                <a
                   class="${isActive ? "active" : ""}"
-                  href="${menu.href}">${menu.name}
+                  href="${menu.href}">
+                  ${menu.name}
                 </a>
-              </li>
-            `;
+              </li>`;
             })
             .join("")}
         </ul>
